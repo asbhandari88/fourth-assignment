@@ -1,0 +1,12 @@
+<div class="container">
+  <hr>
+  <app-game-control (intervalEvent)="onEventReceive($event)"></app-game-control>
+  <hr>
+  <ul>
+    <li *ngFor="let currentVal of currentIntervalStore">
+      <app-even [intervalNumber]="currentVal" *ngIf="currentVal % 2 == 0"></app-even>
+      <app-odd [intervalNumber] = "currentVal" *ngIf="currentVal % 2 != 0"></app-odd>
+    </li>
+  </ul>
+
+</div>
